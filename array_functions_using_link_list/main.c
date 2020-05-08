@@ -1,7 +1,7 @@
 #include "list.h"
 #include <stdio.h>
 
-int increase_by_one(int value)
+int add_one(int value)
 {
   return value + 1;
 }
@@ -24,7 +24,7 @@ int main(void)
   add_to_end(user_data, 3);
   add_to_end(user_data, 4);
   add_to_end(user_data, 5);
-  List_ptr increamend_list = map(&increase_by_one, user_data);
+  List_ptr increamend_list = map(&add_one, user_data);
   display_list(increamend_list);
   List_ptr even_list = filter(&is_even, user_data);
   display_list(even_list);

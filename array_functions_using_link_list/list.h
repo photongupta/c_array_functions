@@ -29,7 +29,7 @@ typedef int (*Predicate)(int);
 typedef int (*Reducer)(int, int);
 
 typedef List *List_ptr;
-int enter_number(void);
+
 Node_ptr create_node(int value);
 List_ptr create_list(void);
 
