@@ -30,3 +30,16 @@ List_ptr map(Func_int_ptr mapper, List_ptr list)
   }
   return mapped_list;
 }
+
+Void_ptr reduce(Func_int_ptr reducer, Void_ptr context, List_ptr list)
+{
+  Void_ptr result = malloc(sizeof(context));
+  result = context;
+  Node_ptr p_walk = list->head;
+  while (p_walk != NULL)
+  {
+    *(result) = reducer(p_walk->value, context);
+    p_walk = p_walk->next;
+  }
+  return result;
+}

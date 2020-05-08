@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-List_ptr map(Func_int_ptr mapper, List_ptr list)
+List_ptr map(Mapper mapper, List_ptr list)
 
 {
   List_ptr mapped_list = create_list();
@@ -16,7 +16,7 @@ List_ptr map(Func_int_ptr mapper, List_ptr list)
   return mapped_list;
 }
 
-List_ptr filter(Func_int_ptr predicate, List_ptr list)
+List_ptr filter(Predicate predicate, List_ptr list)
 
 {
   List_ptr filtered_list = create_list();
@@ -32,7 +32,7 @@ List_ptr filter(Func_int_ptr predicate, List_ptr list)
   return filtered_list;
 }
 
-int reduce(Func_int2_ptr reducer, int context, List_ptr list)
+int reduce(Reducer reducer, int context, List_ptr list)
 {
   int result = context;
   Node_ptr p_walk = list->head;

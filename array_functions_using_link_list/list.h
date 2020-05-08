@@ -24,18 +24,18 @@ typedef struct
   Node *last;
   int count;
 } List;
-typedef int (*Func_int_ptr)(int);
-typedef int (*Func_int2_ptr)(int,int);
+typedef int (*Mapper)(int);
+typedef int (*Predicate)(int);
+typedef int (*Reducer)(int, int);
 
 typedef List *List_ptr;
 int enter_number(void);
 Node_ptr create_node(int value);
 List_ptr create_list(void);
 
-List_ptr map(Func_int_ptr mapper, List_ptr list);
-List_ptr filter(Func_int_ptr predicate, List_ptr list);
-int reduce(Func_int2_ptr reducer, int context, List_ptr list);
-
+List_ptr map(Mapper mapper, List_ptr list);
+List_ptr filter(Predicate predicate, List_ptr list);
+int reduce(Reducer reducer, int context, List_ptr list);
 
 void display_list(List_ptr);
 

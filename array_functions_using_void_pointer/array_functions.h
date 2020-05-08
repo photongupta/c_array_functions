@@ -5,6 +5,6 @@
 
 List_ptr filter(Func_int_ptr, List_ptr);
 List_ptr map(Func_int_ptr, List_ptr);
-int reduce(Func_void_ptr, List_ptr);
+Void_ptr reduce(Func_int2_ptr, Void_ptr, List_ptr);
 
 #endif
